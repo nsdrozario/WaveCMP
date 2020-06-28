@@ -1,6 +1,8 @@
 # WaveCMP 
 WaveCMP is a small program that is designed to find how long a sine wave is above or below a certain threshold.
 
+*Disclaimer: the results from this program are not intended to be 100% accurate. Do not use this program for any applications where extreme precision and accuracy is necessary.*
+
 ## Usage
 
 WaveCMP accepts input in form of a file. This file can be supplied as a single command line argument to the path of the file, or it can be inputted as a string of text after starting the program.
