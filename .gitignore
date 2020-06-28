@@ -1,0 +1,5 @@
+*.o
+**/.vscode
+**/obj
+**/bin
+input.txt
