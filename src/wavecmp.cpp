@@ -1,35 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <gtkmm.h>
 #include <wavecmp.hpp> 
-
-double amplitude, period, phase, mean, resolution, comparison_value, interval_start, interval_end;
-std::string comparison_type;
-bool greater;
 
 int main (int argc, char *argv[]) {
 
-    std::string filepath ("");
+    Glib::RefPtr<Gtk::Application> a = Gtk::Application::create(argc, argv, "io.github.nsdrozario");
+    Glib::RefPtr<Gtk::Builder> glade_ui = Gtk::Builder::create_from_file("wavecmp.glade");
+    Gtk::Window *w = nullptr;
 
-    if (argc == 2) { // assuming we are seeing a valid file path
-    // need to improve this later there are many things wrong with this input method
+    glade_ui->get_widget("window1", w);
 
-    filepath = std::string(argv[1]);
-
-    } else {
-
-        std::cout << "Enter file path: " << std::endl;
-        std::cin >> filepath;
-
-    }
-
-    std::ifstream file_input (filepath);
-    file_input >> amplitude >> period >> phase >> mean >> resolution >> comparison_value >> interval_start >> interval_end >> comparison_type;
-    greater = comparison_type == "greater"; // another thing to fix
-    wavecmp::func function(amplitude, period, phase, mean, resolution);
-
-    std::cout << function.compare_wave(interval_start, interval_end, greater, comparison_value) << " units" << std::endl;
-
-    return 0;
+    return app->run(w);
 
 }
