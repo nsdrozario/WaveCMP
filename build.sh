@@ -1,6 +1,5 @@
-# In my opinion this project doesn't even need a makefile
-# this script assumes you are in the root directory of this repository
+# can't figure out autotools so this is the solution for the time being
 
-g++ src/wavecmp.cpp -c -o func.o -Iinclude/
-g++ src/func.cpp -c -o wavecmp.o -Iinclude/
-g++ wavecmp.o func.o -o wavecmp.exe
+g++ -c src/wavecmp.cpp -o wavecmp.o -Iinclude/ `pkg-config gtkmm-3.0 --cflags --libs`
+g++ -c src/func.cpp -o func.o -Iinclude/
+g++ wavecmp.o func.o `pkg-config gtkmm-3.0 --cflags --libs`
