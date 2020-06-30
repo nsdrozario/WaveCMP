@@ -6,12 +6,12 @@
 
 int main (int argc, char *argv[]) {
 
-    Glib::RefPtr<Gtk::Application> a = Gtk::Application::create(argc, argv, "io.github.nsdrozario");
-    Glib::RefPtr<Gtk::Builder> glade_ui = Gtk::Builder::create_from_file("wavecmp.glade");
-    Gtk::Window *w = nullptr;
+   Gtk::Main m(argc, argv);
+   Glib::RefPtr<Gtk::Builder> b = Gtk::Builder::create_from_file("gui/wavecmp.glade");
+   Gtk::Window *w = 0;
+   b->get_widget("window1", w);
+   Gtk::Main::run(*w);
 
-    glade_ui->get_widget("window1", w);
-
-    return app->run(w);
+    return 0;
 
 }
