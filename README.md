@@ -9,16 +9,7 @@ WaveCMP accepts input in form of a file. This file can be supplied as a single c
 
 ## Building
 
-Simply run `configure` and then `make install` in the top level directory for the repository.
-
-Example:
-
-```
-./configure
-make install
-```
-
-*Note: autotools doesn't quite work for this repository yet, compile errors may happen*
+Simply run `build.sh`. Requires `gtkmm-3.0` and `g++` to be installed.
 
 ## How does it work?
 
