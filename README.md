@@ -9,13 +9,16 @@ WaveCMP accepts input in form of a file. This file can be supplied as a single c
 
 ## Building
 
-You can run the file `build.sh` builds this project. The commands it runs are:
+Simply run `configure` and then `make install` in the top level directory for the repository.
+
+Example:
 
 ```
-g++ src/wavecmp.cpp -c -o wavecmp.o -Iinclude/
-g++ src/func.cpp -c -o func.o -Iinclude/
-g++ wavecmp.o func.o -o wavecmp
+./configure
+make install
 ```
+
+*Note: autotools doesn't quite work for this repository yet, compile errors may happen*
 
 ## How does it work?
 
