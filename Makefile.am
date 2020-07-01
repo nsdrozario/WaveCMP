@@ -1,5 +1,4 @@
-CPPFLAGS = $(gtkmm_CFLAGS) -Iinclude/
-LDFLAGS = $(gtkmm_LIBS)
+CPPFLAGS = `pkg-config gtkmm-3.0 --cflags --libs` -Iinclude/
 AUTOMAKE_OPTIONS = foreign subdir-objects
-bin_PROGRAMS = wavecmp
-wavecmp_SOURCES = src/wavecmp.cpp src/func.cpp
+bin_PROGRAMS = WaveCMP
+WaveCMP_SOURCES = src/wavecmp.cpp src/func.cpp

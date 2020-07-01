@@ -9,7 +9,7 @@ WaveCMP accepts input in form of a file. This file can be supplied as a single c
 
 ## Building
 
-Simply run `build.sh`. Requires `gtkmm-3.0` and `g++` to be installed.
+Simply run `compile_project.sh`. Requires `gtkmm-3.0` and `g++` to be installed.
 
 ## How does it work?
 
