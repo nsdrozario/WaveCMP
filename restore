@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo apt-get install python-six winetricks python2.7-dev python-xdg python-gi python-dbus python2.7 jackd2 python python-enum34 atom libjack-jackd2-dev python-cryptography python-crypto python-keyrings.alt python-cffi-backend python-ipaddress libjack-jackd2-0 libjack-jackd2-0 python-pkg-resources wine-stable python-all python-apt python-secretstorage python-dev python-setuptools python-keyring winehq-stable libasound2-plugins jackd2-firewire wine-stable-i386 python-idna python-wheel python-pip python-asn1crypto python-all-dev

@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = WaveCMP$(EXEEXT)
+bin_PROGRAMS = wavecmp$(EXEEXT)
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -102,9 +102,9 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am_WaveCMP_OBJECTS = src/wavecmp.$(OBJEXT) src/func.$(OBJEXT)
-WaveCMP_OBJECTS = $(am_WaveCMP_OBJECTS)
-WaveCMP_LDADD = $(LDADD)
+am_wavecmp_OBJECTS = src/wavecmp.$(OBJEXT) src/func.$(OBJEXT)
+wavecmp_OBJECTS = $(am_wavecmp_OBJECTS)
+wavecmp_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -134,8 +134,8 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(WaveCMP_SOURCES)
-DIST_SOURCES = $(WaveCMP_SOURCES)
+SOURCES = $(wavecmp_SOURCES)
+DIST_SOURCES = $(wavecmp_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -279,7 +279,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = foreign subdir-objects
-WaveCMP_SOURCES = src/wavecmp.cpp src/func.cpp
+wavecmp_SOURCES = src/wavecmp.cpp src/func.cpp
 all: all-am
 
 .SUFFIXES:
@@ -369,9 +369,9 @@ src/wavecmp.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/func.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 
-WaveCMP$(EXEEXT): $(WaveCMP_OBJECTS) $(WaveCMP_DEPENDENCIES) $(EXTRA_WaveCMP_DEPENDENCIES) 
-	@rm -f WaveCMP$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(WaveCMP_OBJECTS) $(WaveCMP_LDADD) $(LIBS)
+wavecmp$(EXEEXT): $(wavecmp_OBJECTS) $(wavecmp_DEPENDENCIES) $(EXTRA_wavecmp_DEPENDENCIES) 
+	@rm -f wavecmp$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(wavecmp_OBJECTS) $(wavecmp_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
