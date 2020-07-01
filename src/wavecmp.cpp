@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <string>
 #include <gtkmm.h>
@@ -17,8 +18,8 @@ Gtk::SpinButton *comparison_value;
 Gtk::ComboBox *comparator = nullptr;
 Gtk::Label *answer = nullptr;
 
-double calculate_answer() {
-
+static void calculate_answer() {
+    
     double a,b,c,d,res,int_start,int_end,val;
     double ans;
     //TreeModel::Iterator it;
@@ -34,9 +35,11 @@ double calculate_answer() {
     wavecmp::func function(a,b,c,d,res);
     function.set_resolution(res);
     ans = function.compare_wave(int_start, int_end, true, val); // not going to worry about the comparator bit right now I want to see if this builds first
-    //answer->set_value(std::string(ans));*/
-
+    std::stringstream ans2;
+    ans2 << "Answer: " << ans;
+    answer->set_text(ans2.str());
 }
+
 
 int main (int argc, char **argv) {
 
@@ -45,6 +48,7 @@ int main (int argc, char **argv) {
 
     // if anyone knows a better way please educate me
     builder->get_widget("window1", w);
+
     builder->get_widget("StartButton", submit);
     builder->get_widget("amplitude", amplitude);
     builder->get_widget("period", period);
@@ -55,9 +59,10 @@ int main (int argc, char **argv) {
     builder->get_widget("interval_end", interval_end);
    // builder->get_widget("comparator", comparator);
     builder->get_widget("comparison_value", comparison_value);
-  //  builder->get_widget("answer_string", answer);
+    builder->get_widget("answer_string", answer);
     
-   // submit->signal_clicked().connect(sigc::ptr_fun(&calculate_answer));
+
+   submit->signal_clicked().connect(sigc::ptr_fun(&calculate_answer));
     application->run(*w);
     
     delete w;
