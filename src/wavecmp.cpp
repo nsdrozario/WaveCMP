@@ -2,9 +2,11 @@
 #include <sstream>
 #include <fstream>
 #include <string>
+#include <thread>
 #include <gtkmm.h>
 #include <wavecmp.hpp> 
 
+// GTK widgets
 Gtk::Window *w = nullptr;
 Gtk::Button *submit = nullptr;
 Gtk::SpinButton *amplitude = nullptr;
@@ -17,9 +19,14 @@ Gtk::SpinButton *interval_end = nullptr;
 Gtk::SpinButton *comparison_value;
 Gtk::ComboBox *comparator = nullptr;
 Gtk::Label *answer = nullptr;
+Gtk::Label *loading_text = nullptr;
+Gtk::Spinner *loading = nullptr;
 
+// global variables
+std::string calc_answer;
+
+// helper methods and event handlers
 static void calculate_answer() {
-    
     double a,b,c,d,res,int_start,int_end,val;
     double ans;
     //TreeModel::Iterator it;
@@ -37,7 +44,20 @@ static void calculate_answer() {
     ans = function.compare_wave(int_start, int_end, true, val); // not going to worry about the comparator bit right now I want to see if this builds first
     std::stringstream ans2;
     ans2 << "Answer: " << ans;
-    answer->set_text(ans2.str());
+    calc_answer = ans2.str();
+}
+
+static void run_calculation() {
+    std::thread calc_thread(calculate_answer); // this should be thread safe because the main thread and the worker thread are not accessing the same variables at the same time
+    loading->start();
+    loading_text->show();
+    submit->set_sensitive(false);
+    calc_thread.join();
+    answer->set_text(calc_answer);
+    loading->stop();
+    loading_text->hide();
+    submit->set_sensitive(true);
+
 }
 
 
@@ -48,7 +68,6 @@ int main (int argc, char **argv) {
 
     // if anyone knows a better way please educate me
     builder->get_widget("window1", w);
-
     builder->get_widget("StartButton", submit);
     builder->get_widget("amplitude", amplitude);
     builder->get_widget("period", period);
@@ -60,9 +79,10 @@ int main (int argc, char **argv) {
    // builder->get_widget("comparator", comparator);
     builder->get_widget("comparison_value", comparison_value);
     builder->get_widget("answer_string", answer);
-    
+    builder->get_widget("loading_text", loading_text);
+    builder->get_widget("loading_spinner", loading);
 
-   submit->signal_clicked().connect(sigc::ptr_fun(&calculate_answer));
+   submit->signal_clicked().connect(sigc::ptr_fun(&run_calculation));
     application->run(*w);
     
     delete w;
