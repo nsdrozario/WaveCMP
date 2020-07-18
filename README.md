@@ -3,6 +3,10 @@ WaveCMP is a small program that is designed to find how long a sine wave is abov
 
 *Disclaimer: the results from this program are not intended to be 100% accurate. Do not use this program for any applications where extreme precision and accuracy is necessary.*
 
+## Binaries
+
+Binaries for Windows (64 bit) are available in the [releases category](https://github.com/nsdrozario/WaveCMP/releases/) of this repository. 
+
 ## Usage
 
 WaveCMP accepts input in form of a file. This file can be supplied as a single command line argument to the path of the file, or it can be inputted as a string of text after starting the program.
@@ -10,8 +14,6 @@ WaveCMP accepts input in form of a file. This file can be supplied as a single c
 ## Building
 
 Simply run `compile_project.sh`. Requires `gtkmm-3.0`, `pkg-config` and `g++` to be installed.
-
-Binaries for Windows (x86_64 only) are available in the releases section for this repository.
 
 ## How does it work?
 
