@@ -18,7 +18,7 @@ These parameters construct `f(x)`, which is a sine wave. This is the function Wa
 - **Amplitude**: the amplitude of the wave, defined as the distance from the crest (maximum point) and the mean (constant value the wave oscillates around) of the wave
 - **Period**: the length of the interval that is repeated periodically throughout the wave (the wave starts at the same position for this number of units)
 - **Phase**: the horizontal shift of the wave.
-- **Mean**: the constant value that the wave oscillates around (for example, the mean of `sin(x)` is `0`.)
+- **Mean**: the constant value that the wave oscillates around (for example, the mean of `sin(x)` is `0`).
 
 ### WaveCMP-specific parameters
 
