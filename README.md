@@ -25,9 +25,13 @@ These parameters construct `f(x)`, which is a sine wave. This is the function Wa
 These parameters define how WaveCMP will calculate the answer.
 
   -**Resolution**: how many data points to use per unit when calculating the definite integral of `max(f(x), mean)`, where `f(x)` is constructed by the parameters listed above, and `mean` is the mean value supplied. Inversely proportional to Δx.
+  
   -**Interval start**: The inclusive lower bound of the interval the program will analyze.
+  
   -**Interval end**:  The inclusive upper bound of the interval the program will analyze.
+  
   -**Comparator**: Whether to compare when wave is below/above threshold; currently this function is not implemented and the program will only output when the wave is above the threshold even when otherwise selected (this will be fixed on a later update).
+  
   -**Comparison value**: The constant for comparing the wave function's value against (called the threshold by the above descriptions of this program's parameters).
 
 ## Building
