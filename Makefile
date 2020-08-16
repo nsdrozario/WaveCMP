@@ -13,7 +13,7 @@ clean:
 wavecmp: src/wavecmp.cpp src/func.cpp
   $(CXX) src/wavecmp.cpp -c -o wavecmp.o $(CXXFLAGS)
   $(CXX) src/func.cpp -c -o func.o $(CXXFLAGS)
-  $(CXX) wavecmp.o func.o $(LIBS) -o wavecmp
+  $(CXX) wavecmp.o func.o $(LIBS) -o wavecmp $(LIBS)
   
 install: wavecmp
   cp wavecmp $(INSTALL_DIR)/wavecmp
