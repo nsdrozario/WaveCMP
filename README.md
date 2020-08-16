@@ -32,6 +32,12 @@ These parameters define how WaveCMP will calculate the answer.
 
 ## Building
 
+### Dependencies
+
+This application depends on gtkmm (version 3.0). Make sure you have it installed before compiling from source.
+
+### Platforms
+
 #### Linux
 Run the following command:
 ```
@@ -39,6 +45,8 @@ make wavecmp
 ```
 If you want to install WaveCMP, you can run `sudo make install`. By default it will install to `/usr/bin`, but 
 you can change this by editing the `INSTALL_DIR` variable at the top of the Makefile.
+
+The Makefile assumes you have `pkg-config` installed and it can locate `gtkmm-3.0`.
 #### Windows
 If you are using MSYS2, the process is essentially the same as the Linux instructions, except that you don't need `sudo` to install to `/usr/bin`.
 Please note that outside of the MSYS2 shell, you will need the appropriate dynamically linked library files to run WaveCMP within Windows. If you do not 
