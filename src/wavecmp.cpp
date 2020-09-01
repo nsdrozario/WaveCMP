@@ -57,7 +57,6 @@ static void run_calculation() {
     loading->stop();
     loading_text->hide();
     submit->set_sensitive(true);
-
 }
 
 

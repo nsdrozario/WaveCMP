@@ -41,10 +41,18 @@ double wavecmp::func::compare_wave(double start, double end, bool greater, doubl
 
 }
 
-wavecmp::func::func(double a, double b, double c, double d) : amplitude(a), period(b), phase(c), mean(d) {}
+wavecmp::func::func(double a, double b, double c, double d) {
+    amplitude = a;
+    period = b;
+    phase = c;
+    mean = d;
+}
 
-wavecmp::func::func(double a, double b, double c, double d, double r) : amplitude(a), period(b), phase(c), mean(d) {
-
+wavecmp::func::func(double a, double b, double c, double d, double r) {
+    amplitude = a;
+    period = b;
+    phase = c;
+    mean = d;
     set_resolution(r);
 
 }
