@@ -4,7 +4,7 @@
 
 #include <cmath>
 
-#define TAU 2.0d * M_PI
+#define TAU 2.0L * M_PI
 
 namespace wavecmp {
 
@@ -17,9 +17,9 @@ namespace wavecmp {
     class func {
 
         public:
-            double phase = 0.0d;
-            double amplitude = 1.0d;
-            double mean = 0.0d;
+            double phase = 0.0L;
+            double amplitude = 1.0L;
+            double mean = 0.0L;
             double period = TAU;
         
             void set_resolution(int res); // set amount of points per unit
@@ -28,7 +28,7 @@ namespace wavecmp {
             func(double a, double b, double c, double d); // constructor
             func(double a, double b, double c, double d, double r);
         private:
-            double x_step = 0.1d; // increment value
+            double x_step = 0.1L; // increment value
             double calculate(double x, double val); // x value and comparison value
             double integrate(double start, double end, double val); // trapezoidal rule
 
